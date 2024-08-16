@@ -93,12 +93,18 @@ const GamePage = () => {
   return (
     <div className=" lg:p-8 md:p-6 sm:p-5 xs:p-4">
       <div className="uppercase flex flex-col items-center justify-center bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">
-        <div className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl xs:text-lg">rock paper scissors</div>{" "}
-        <div className=" xl:text-2xl lg:text-xl md:text-lg sm:text-base xs:text-sm">(race to 10!)</div>
+        <div className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl xs:text-lg">
+          rock paper scissors
+        </div>{" "}
+        <div className=" xl:text-2xl lg:text-xl md:text-lg sm:text-base xs:text-sm">
+          (race to 10!)
+        </div>
       </div>
-      <div className="grid grid-cols-2 lg:mt-20 sm:mt-14 xs:mt-20">
-        <div className="flex flex-col gap-6 items-center justify-center bg-green-300">
-          <div className=" xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl xs:text-lg font-medium">YOU</div>
+      <div className="sm:grid grid-cols-2 xs:flex flex-col-reverse xs:gap-16 sm:gap-0 lg:mt-20 sm:mt-14 xs:mt-7">
+        <div className="flex flex-col sm:gap-6 xs:gap-3 items-center justify-center bg-green-300">
+          <div className=" xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl xs:text-lg font-medium">
+            YOU
+          </div>
           <div className="xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl xs:text-3xl">
             {playerScore === 10 ? (
               <span className="text-green-600">WON</span>
@@ -108,8 +114,8 @@ const GamePage = () => {
               playerScore
             )}
           </div>
-          <div className="flex flex-col gap-5 items-center justify-center xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl xs:text-3xl">
-            <div className="flex gap-10">
+          <div className="flex flex-col gap-5 items-center justify-center xl:text-7xl lg:text-6xl md:text-5xl xs:text-4xl">
+            <div className="flex gap-14">
               <FaHandRock
                 className={`" ${
                   playerRockSign ? " text-blue-950" : " text-blue-200"
@@ -131,30 +137,34 @@ const GamePage = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-6 items-center">
-          <div className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl xs:text-lg font-medium ">COMPUTER</div>
-          <div className="xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl xs:text-3xl">{computerScore}</div>
-          <div className="xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl xs:text-3xl relative">
+        <div className="flex flex-col sm:gap-6 xs:gap-3 items-center">
+          <div className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl xs:text-lg font-medium ">
+            COMPUTER
+          </div>
+          <div className="xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl xs:text-3xl">
+            {computerScore}
+          </div>
+          <div className="xl:text-7xl lg:text-6xl md:text-5xl xs:text-4xl relative">
             <FaHandRock
               className={` ${
                 computerRockSign
                   ? " opacity-100 visible hover:cursor-pointer text-blue-950"
                   : " opacity-0 invisible"
-              } absolute top-3 -left-7 "`}
+              } absolute top-3 sm:-left-10 xs:-left-5 "`}
             />
             <FaHandPaper
               className={` ${
                 computerPaperSign
                   ? " opacity-100 visible hover:cursor-pointer text-gray-950"
                   : " opacity-0 invisible"
-              } absolute top-3 -left-7 "`}
+              } absolute top-3 sm:-left-10 xs:-left-5 "`}
             />
             <FaHandScissors
               className={` ${
                 computerScissorSign
                   ? " opacity-100 visible hover:cursor-pointer text-red-950"
                   : " opacity-0 invisible"
-              } absolute top-3 -left-7 "`}
+              } absolute top-3 sm:-left-10 xs:-left-5 "`}
             />
           </div>
         </div>
